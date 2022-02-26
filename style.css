@@ -3,8 +3,12 @@ html{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100%;        
+    background-size: 150%;    
+    background-color: #000000;    
+    background-position:-60px;    
+    
 }
+
 body{
     font-size: 20px;
     margin: auto;
@@ -61,12 +65,16 @@ body{
     position: absolute;
     bottom: 0;
     width: 100%;
-    
+    margin: 0 auto;  
+    text-align:center;    
 }
 .redeem,.chkcurse,.bpack,.setting {    
+    clear:both;
     display: inline;
-    text-align: end;
-    max-width: 100%;
+    margin:0 auto;        
+    padding-left: 5%;
+    padding-right: 5%;
+    
 }
 /*html{
     text-align: center;
