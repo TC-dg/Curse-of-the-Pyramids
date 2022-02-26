@@ -28,7 +28,7 @@ body{
     margin-top: 10px;
     margin-left: 3px;    
     float: left;
-    width: 30%;
+    width: 25%;
     height: 15px;
 }
 .teamname{
@@ -51,7 +51,7 @@ body{
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);    
     border-width: 5px;
-    border-style:dashed;
+    border-style: dashed;
     border-color: yellow;
     /*visibility: hidden;*/
 }
@@ -70,8 +70,9 @@ body{
 }
 .redeem,.chkcurse,.bpack,.setting {    
     clear:both;
-    display: inline;
+    display: inline-block;
     margin:0 auto;        
+    text-align: center;
     padding-left: 5%;
     padding-right: 5%;
     
