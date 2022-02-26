@@ -3,9 +3,9 @@ html{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 150%;    
+    background-size: 140%;    
     background-color: #000000;    
-    background-position:-60px;    
+    background-position: left 50% top 25%;    
     
 }
 
