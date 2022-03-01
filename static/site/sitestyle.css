@@ -1,5 +1,5 @@
 html{    
-    background-image: url("static/image/posterPrec.jpg");
+    background-image: url("../image/posterPrec.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -15,7 +15,7 @@ body{
     color: #ffffff;
 }
 .topp{        
-    background-image: url("static/image/woodbar.jpg");
+    background-image: url("../image/woodbar.jpg");
     background-size: cover;
     background-repeat: repeat-x;
     background-attachment: fixed;
@@ -35,6 +35,7 @@ body{
     float: right;
 }
 .react{
+    font-size: 36px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
     background-color: rgba(44, 139, 228, 0.856);    
     margin: 0;
@@ -57,7 +58,7 @@ body{
 }
 .bott{
     clear: both;
-    background-image: url("static/image/woodbar.jpg");
+    background-image: url("../image/woodbar.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-size: 50%;    
@@ -80,6 +81,7 @@ body{
     padding-right: 0%;
     width: 20%;
 }
+
 /*html{
     text-align: center;
     margin:0 auto ;
