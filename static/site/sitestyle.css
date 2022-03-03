@@ -1,25 +1,36 @@
-html{    
-    background-image: url("../image/posterPrec.jpg");
+html{
+    background-color: rgba(0, 0, 0, 0);
+}
+body{
+    font-size: 20px;
+    margin: auto;
+    color: #ffffff;    
+    background-color: rgba(0, 0, 0, 0);
+}
+.bgpart{
+    content: ' ';
+    display: block;
+    position: absolute;        
+    width: 100%;
+    height: 100%; 
+    background-image: url("../image/posterPrec.jpg") ;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 140%;    
-    background-color: #000000;    
     background-position: left 50% top 25%;    
-    
-}
-
-body{
-    font-size: 20px;
-    margin: auto;
-    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    z-index: 0;
 }
 .topp{        
+    position: relative;
     background-image: url("../image/woodbar.jpg");
     background-size: cover;
     background-repeat: repeat-x;
     background-attachment: fixed;
-    background-size: 50%;    
+    background-size: 50%; 
+    z-index: 999;   
 }
 .san{    
     float: left;
@@ -37,7 +48,7 @@ body{
 .react{
     font-size: 36px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
-    background-color: rgba(44, 139, 228, 0.856);    
+    background-color: rgba(45, 140, 220, 0.8);    
     margin: 0;
     padding: 0;
     position: absolute;
@@ -55,6 +66,19 @@ body{
     border-style: dashed;
     border-color: yellow;
     /*visibility: hidden;*/
+    z-index: 2;
+}
+.blackk{
+    clear: both;
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+    background-color: rgba(0, 0, 0, 0.5);    
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
 }
 .bott{
     clear: both;
@@ -68,6 +92,7 @@ body{
     width: 100%;
     margin: 0 auto;  
     text-align:center;    
+    z-index: 999;
 }
 
 .redeem,.chkcurse,.bpack,.setting {  
@@ -81,7 +106,32 @@ body{
     padding-right: 0%;
     width: 20%;
 }
-
+.spellinput{
+    width: 65%;
+    text-align: center;
+}
+.dialog{
+    font-size: 36px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    width: 15%;
+    border:1px solid #e5ff00;
+    background-color: #700000;
+    box-shadow:0px 0px 10px;
+    padding: 10px;
+    transform:translate(-50%,0%);
+    display:none;
+    z-index: 3;
+}
+.dialog>.close{
+    position: absolute;
+    top: 0px;
+    right: 5px;
+    cursor:pointer;/*cursor游標pointer指針:改變鼠標*/
+}
 /*html{
     text-align: center;
     margin:0 auto ;
