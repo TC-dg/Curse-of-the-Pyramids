@@ -16,10 +16,10 @@ window.onload=function(){
     login();
 }
 
-function login(){
-    //document.getElementById("teamname").textContent = "隊名:"+document.getElementById("login").value;
+function login(){    
     $.getJSON("./static/data.json", function (data) {
-        //data.teamname = document.getElementById("login").value;
-        $("#teamname").html("隊名:"+data.teamname);
+        data.teamname = document.getElementById("login").value;
+        //document.getElementById("teamname").textContent = "隊名:"+document.getElementById("login").value;
+        document.getElementById("teamname").textContent = "隊名:"+data.teamname;
     });
 }

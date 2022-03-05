@@ -11,7 +11,8 @@ function castspell() {
             document.getElementById("dialog").style.backgroundColor = "#FFE8C2";
             document.getElementById("dialog").style.color = "#000000";
             $("#msg").html("密語正確"+"<br>"+spell.spell[i].msg);
-            showDialog();   
+            showDialog();            
+            gogo();
             } else {//wrong
             showDialog();   
             }            
@@ -36,4 +37,8 @@ function login(){
         //data.teamname = document.getElementById("login").value;
         return $("#teamname").html("隊名:"+data.teamname);
     });
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }

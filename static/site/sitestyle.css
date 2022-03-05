@@ -46,6 +46,9 @@ body{
     float: right;
 }
 .react{
+    background-image: url("../image/woodbar.jpg");  
+    background-size: cover;
+    background-repeat: no-repeat;
     font-size: 36px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;    
     background-color: rgba(45, 140, 220, 0.8);    
@@ -53,10 +56,10 @@ body{
     padding: 0;
     position: absolute;
     text-align: center;
-    top: 45%;
+    top: 48%;
     left: 50%;
-    width: 50%;
-    height: 65%;
+    height: 87%;
+    width: 80%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
@@ -129,7 +132,19 @@ body{
     position: absolute;
     top: 0px;
     right: 5px;
-    cursor:pointer;/*cursor游標pointer指針:改變鼠標*/
+    cursor: pointer;/*cursor游標pointer指針:改變鼠標*/
+}
+.item{
+    font-size: 20px;
+    display: inline-block;
+    max-width: 35vw;
+    
+    text-align: center;    
+    padding: 5px;
+    border: 20px solid rgba(0, 0, 0, 0.3);
+}
+.item img{
+    width: 50%;
 }
 /*html{
     text-align: center;
