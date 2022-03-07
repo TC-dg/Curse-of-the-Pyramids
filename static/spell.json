@@ -9,9 +9,8 @@
         "name": "小公主",
         "msg": "不好說"
     }, {
-        "name": "panda2",
-        "msg": "panda2 has changed",
-        "action": "item2.src='..\\image\\panda2.jpg';$('#item2').html('熊貓變了');"
+        "name": "p2",
+        "msg": "panda2 has changed"
     }, {
         "name": "0.0",
         "msg": "٩(๑òωó๑)۶٩(๑òωó๑)۶٩(๑òωó๑)۶"
