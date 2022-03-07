@@ -66,6 +66,7 @@ function hideDialog(){
 }
 function firstlogin(){
     teannameinput.style.display="none";
+    password();
 }
 function login(){
     //document.getElementById("teamname").textContent = "隊名:"+document.getElementById("login").value;
