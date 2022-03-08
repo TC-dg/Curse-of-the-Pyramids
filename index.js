@@ -102,7 +102,10 @@ function doit(spell) {
         var title = document.getElementById("item2title");
         var jpg = document.getElementById("item2jpg");
         jpg.src="static/image/panda2.jpg";
-        title.innerText="熊貓變了";    
+        title.innerText="熊貓變了";
+        var item4 = document.getElementById("item4");
+        item4.style.display="none";
+
     }
 }
 function sleep(ms) {
