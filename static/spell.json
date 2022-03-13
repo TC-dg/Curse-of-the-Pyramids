@@ -1,7 +1,10 @@
 {
     "spell": [{
         "name": "test",
-        "msg": "測試啦"
+        "msg": "測試啦",
+        "used": 0,
+        "condition": "money",
+        "action": ""
     }, {
         "name": "money",
         "msg": "給你錢(´・ω・｀)"

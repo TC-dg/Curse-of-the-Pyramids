@@ -6,10 +6,11 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script type="text/javascript" src="instascan.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CurseOfPharoh</title>
+    <title>CurseOfPharaoh</title>
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
 </head>
@@ -29,7 +30,7 @@
     <div class="react" id="teannameinput">隊名tt
         <br><br>
         <div style="font-size:28px;">
-            <input class="login" type="text" id="login" placeholder="login" style="width: 40vw;"><br><br>
+            <input class="login" type="text" id="login" placeholder="請輸入隊名" style="width: 40vw;"><br><br>
             <button onclick="firstlogin()" style=" font-size: 20px;">login</button>
         </div>
     </div>
@@ -42,12 +43,12 @@
     </div>
     <div class="react" id="cursereact">查看詛咒<br><br>
         <img src="static\image\eye0.png" id="eye" style="height: 40vmin; ">
-        <div class="cursetext">
-            詛咒一：<br>
-            詛咒二：<br>
-            詛咒三：<br>
-            詛咒四：<br>
-            詛咒五：<br>
+        <div class="cursetext" id="cursetext">
+            <button onclick="cur1()">詛咒一</button>
+            <button onclick="cur2()">詛咒二</button><br>
+            <button onclick="cur3()">詛咒三</button>
+            <button onclick="cur4()">詛咒四</button>
+            <button onclick="cur5()">詛咒五</button>
         </div>
     </div>
     <div class="react" id="bkpkreact">背包
@@ -65,20 +66,25 @@
             <span id="item4title">道具4</span>
         </div>
     </div>
-    <div class="react" id="settingreact">設定/任務清單</div>
+    <div class="react" id="settingreact">設定/任務清單<br><br>
+        <button onclick="cur1()">詛咒一</button><br>
+        <button onclick="cur2()">詛咒二</button><br>
+        <button onclick="cur3()">詛咒三</button><br>
+
+    </div>
     <div class="blackk" id="blackk" onclick="hideDialog();"></div>
     <div class=" dialog" id="dialog">
         <div class="close" onclick="hideDialog();" id="x">x</div>
         <div class="msg" id="msg">詛咒錯誤</div>
     </div>
-    <div class="bott">
-        <div class="passwd" onclick="password();">
+    <div class="bott" id="bott">
+        <div class="passwd" id="passwd" onclick="password();">
             <img src="static\image\spell.png" width="30" height="30"><br> 通關密語 </div>
-        <div class="curse" onclick="curse();">
+        <div class="curse" id="curse" onclick="curse();">
             <img src="static\image\curse.png" width="30" height="30"><br> 詛咒 </div>
-        <div class="bpack" onclick="backpack();">
+        <div class="bpack" id="bpack" onclick="backpack();">
             <img src="static\image\backpack.png" width="30" height="30"><br> 背包 </div>
-        <div class="setting" onclick="settings();">
+        <div class="setting" id="setting" onclick="settings();">
             <img src="static\image\setting.png" width="30" height="30"><br> 設定 </div>
     </div>
 </body>
