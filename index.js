@@ -9,13 +9,13 @@ function castspell() {
         document.getElementById("blackk").style.zIndex = 3;
         for (let i = 0; i < Object.keys(spell.spell).length; i++) {
             if (spellinput == spell.spell[i].name) { //right
-                document.getElementById("dialog").style.backgroundColor = "#FFE8C2";
-                document.getElementById("dialog").style.color = "#000000";
+                document.getElementById("spellconv").style.backgroundColor = "#FFE8C2";
+                document.getElementById("spellconv").style.color = "#000000";
                 $("#msg").html("密語正確" + "<br>" + spell.spell[i].msg);
-                showDialog();
+                showspellconv();
                 doit(spellinput);
             } else { //wrong
-                showDialog();
+                showspellconv();
             }
         }
     });
@@ -59,15 +59,15 @@ function settings() {
     document.getElementsByClassName("setting")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 2px;background-color: rgba(0, 0, 0, 0.3);");
 }
 
-function showDialog() {
-    dialog.style.display = "block";
+function showspellconv() {
+    spellconv.style.display = "block";
 }
 
-function hideDialog() {
-    dialog.style.display = "none";
+function hidespellconv() {
+    spellconv.style.display = "none";
     document.getElementById("blackk").style.zIndex = 1;
-    document.getElementById("dialog").style.backgroundColor = "#700000";
-    document.getElementById("dialog").style.color = "#FFFFFF";
+    document.getElementById("spellconv").style.backgroundColor = "#700000";
+    document.getElementById("spellconv").style.color = "#FFFFFF";
     document.getElementById("msg").textContent = "詛咒錯誤";
     $(".blackk").css('opacity', '0');
 }
@@ -200,5 +200,8 @@ function camera() {
     }).catch(function (e) {
         console.error(e);
     });
-
+    document.getElementById("preview").style.zIndex = 10;
+    const cam = document.getElementById("camera");
+    cam.style.left = "90%";
+    cam.style.top = "90%";
 }

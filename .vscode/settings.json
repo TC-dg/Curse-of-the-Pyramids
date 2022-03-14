@@ -9,10 +9,15 @@
         "cursereact",
         "cursetext",
         "eyeimg",
+        "hidespellconv",
         "notat",
+        "Prec",
         "pswdreact",
         "settingreact",
+        "showspellconv",
+        "spellconv",
         "spellinput",
-        "teamname"
+        "teamname",
+        "teannameinput"
     ]
 }
