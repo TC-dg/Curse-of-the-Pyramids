@@ -169,7 +169,8 @@ function cameraon() {
         continuous: true, // 連續掃描
         video: document.getElementById('preview'), // 預覽
         facingMode: {
-            exact: "environment"
+            mirror: false,
+            exact: "user"
         }
     });
     scanner.addListener('scan', function (content) {
