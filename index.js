@@ -169,6 +169,8 @@ function cameraon() {
         continuous: true, // 連續掃描
         video: document.getElementById('preview'), // 預覽
         mirror: false,
+        refractoryPeriod: 5000,
+        backgroundScan: false,
         facingMode: {
             exact: "environment"
         }
@@ -205,11 +207,11 @@ function cameraon() {
     });
     const pre = document.getElementById("preview");
     const cam = document.getElementById("camera");
-    cam.style.left = "90%";
+    cam.style.left = "85%";
     cam.style.top = "90%";
-    pre.style.zIndex = "10";
-    pre.style.width = "40vw";
     cam.setAttribute("onClick", "cameraoff();");
+    pre.style.zIndex = "10";
+    //pre.style.width = "40vw";
 
 }
 
@@ -217,6 +219,9 @@ function cameraoff() {
     let scanner = new Instascan.Scanner({
         continuous: true, // 連續掃描
         video: document.getElementById('preview'), // 預覽
+        mirror: false,
+        refractoryPeriod: 5000,
+        backgroundScan: false,
         facingMode: {
             exact: "environment"
         }
