@@ -166,11 +166,12 @@ function sleep(ms) {
 
 function cameraon() {
     let scanner = new Instascan.Scanner({
-        continuous: true, // 連續掃描
         video: document.getElementById('preview'), // 預覽
+        continuous: true, // 連續掃描
         mirror: false,
         refractoryPeriod: 5000,
         backgroundScan: false,
+        scanPeriod: 10,
         facingMode: {
             exact: "environment"
         }
