@@ -40,8 +40,8 @@
             <input class="spellinput" type="text" id="spell" placeholder="請輸入咒語"><br><br>
             <button onclick="castspell()" style=" font-size: 20px;">確定</button><br>
         </div>
-        <div class="camera" id="camera">
-            <img src="static\image\camera.png" onclick="camera();"><br>
+        <div class="camera" id="camera" onclick="cameraon();">
+            <img src="static\image\camera.png"><br>
         </div>
         <video class="preview" id="preview"></video>
     </div>
@@ -76,9 +76,9 @@
         <button onclick="set3()">Credit</button><br>
 
     </div>
-    <div class="blackk" id="blackk" onclick="hidespellconv();"></div>
-    <div class=" spellconv" id="spellconv">
-        <div class="close" onclick="hidespellconv();" id="x">x</div>
+    <div class="blackk" id="blackk" onclick="hideconv();"></div>
+    <div class="conv" id="spellconv">
+        <div class="close" onclick="hideconv();" id="x">x</div>
         <div class="msg" id="msg">詛咒錯誤</div>
     </div>
     <div class="bott" id="bott">

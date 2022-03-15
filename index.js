@@ -63,7 +63,7 @@ function showspellconv() {
     spellconv.style.display = "block";
 }
 
-function hidespellconv() {
+function hideconv() {
     spellconv.style.display = "none";
     document.getElementById("blackk").style.zIndex = 1;
     document.getElementById("spellconv").style.backgroundColor = "#700000";
@@ -164,7 +164,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function camera() {
+function cameraon() {
     let scanner = new Instascan.Scanner({
         continuous: true, // 連續掃描
         video: document.getElementById('preview'), // 預覽
@@ -192,7 +192,9 @@ function camera() {
     });
 
     Instascan.Camera.getCameras().then(function (cameras) {
-        if (cameras.length > 0) {
+        if (cameras.length > 1) {
+            scanner.start(cameras[1]); // [0] 前鏡頭 [1] 後鏡頭 
+        } else if (cameras.length > 0) {
             scanner.start(cameras[0]); // [0] 前鏡頭 [1] 後鏡頭 
         } else {
             console.error('沒有找到相機');
@@ -200,8 +202,30 @@ function camera() {
     }).catch(function (e) {
         console.error(e);
     });
-    document.getElementById("preview").style.zIndex = 10;
+    const pre = document.getElementById("preview");
     const cam = document.getElementById("camera");
     cam.style.left = "90%";
     cam.style.top = "90%";
+    pre.style.zIndex = "10";
+    pre.style.width = "40vw";
+    cam.setAttribute("onClick", "cameraoff();");
+
+}
+
+function cameraoff() {
+    let scanner = new Instascan.Scanner({
+        continuous: true, // 連續掃描
+        video: document.getElementById('preview'), // 預覽
+        facingMode: {
+            exact: "environment"
+        }
+    });
+    scanner.stop();
+    const pre = document.getElementById("preview");
+    const cam = document.getElementById("camera");
+    cam.style.left = "50%";
+    cam.style.top = "65%";
+    cam.setAttribute("onClick", "cameraon();");
+    pre.style.zIndex = "0";
+    pre.style.width = "0vw";
 }
