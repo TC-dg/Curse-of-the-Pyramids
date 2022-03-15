@@ -170,7 +170,7 @@ function cameraon() {
         video: document.getElementById('preview'), // 預覽
         mirror: false,
         facingMode: {
-            exact: "user"
+            exact: "environment"
         }
     });
     scanner.addListener('scan', function (content) {
