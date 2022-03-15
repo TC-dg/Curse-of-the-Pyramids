@@ -12,10 +12,10 @@ function castspell() {
                 document.getElementById("spellconv").style.backgroundColor = "#FFE8C2";
                 document.getElementById("spellconv").style.color = "#000000";
                 $("#msg").html("密語正確" + "<br>" + spell.spell[i].msg);
-                showspellconv();
+                showconv(document.getElementById("spellconv"));
                 doit(spellinput);
             } else { //wrong
-                showspellconv();
+                showconv(document.getElementById("spellconv"));
             }
         }
     });
@@ -59,12 +59,13 @@ function settings() {
     document.getElementsByClassName("setting")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 2px;background-color: rgba(0, 0, 0, 0.3);");
 }
 
-function showspellconv() {
-    spellconv.style.display = "block";
+function showconv(conver) {
+    conver.style.display = "block";
 }
 
 function hideconv() {
     spellconv.style.display = "none";
+    notdoconv.style.display = "none";
     document.getElementById("blackk").style.zIndex = 1;
     document.getElementById("spellconv").style.backgroundColor = "#700000";
     document.getElementById("spellconv").style.color = "#FFFFFF";
@@ -235,4 +236,13 @@ function cameraoff() {
     cam.setAttribute("onClick", "cameraon();");
     pre.style.zIndex = "0";
     pre.style.width = "0vw";
+}
+
+function set1() {
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    document.getElementById("notdoconv").style.backgroundColor = "#FFE8C2";
+    document.getElementById("notdoconv").style.color = "#000000";
+
+    showconv(document.getElementById("notdoconv"));
 }

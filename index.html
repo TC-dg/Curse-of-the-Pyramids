@@ -55,6 +55,7 @@
             <button onclick="cur5()">詛咒五</button>
         </div>
     </div>
+    <div class="blackk" id="blackk" onclick="hideconv();"></div>
     <div class="react" id="bkpkreact">背包
         <br>
         <div class="item" id="item1"><img src="static\image\panda.jpg" id="item1jpg"><br>
@@ -74,9 +75,14 @@
         <button onclick="set1()">禁忌</button><br>
         <button onclick="set2()">任務清單</button><br>
         <button onclick="set3()">Credit</button><br>
-
+        <div class="conv" id="notdoconv">
+            <div class="close" onclick="hideconv();" id="x">x</div>
+            <div class="msg" id="msg">禁忌說明</div>
+            <p>禁忌一</p>
+            <p>禁忌二</p>
+            <p>禁忌三</p>
+        </div>
     </div>
-    <div class="blackk" id="blackk" onclick="hideconv();"></div>
     <div class="conv" id="spellconv">
         <div class="close" onclick="hideconv();" id="x">x</div>
         <div class="msg" id="msg">詛咒錯誤</div>

@@ -222,6 +222,8 @@ body {
     /*cursor游標pointer指針:改變鼠標*/
 }
 
+.notdoconv {}
+
 .item {
     font-size: 16px;
     display: inline-block;
