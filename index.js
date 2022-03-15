@@ -1,6 +1,49 @@
+var cursestat = {
+    'curse1': '0',
+    'curse2': '0',
+    'curse3': '0',
+    'curse4': '0',
+    'curse5': '0',
+    'now': '00000',
+}
+
 window.onload = function () {
     active();
 }
+
+function active() {
+    document.getElementById("bott").style.pointerEvents = "none";
+    document.getElementById("passwd").style.animationPlayState = "paused";
+    document.getElementById("curse").style.animationPlayState = "paused";
+    document.getElementById("bpack").style.animationPlayState = "paused";
+    document.getElementById("setting").style.animationPlayState = "paused";
+    pswdreact.style.display = "none";
+    cursereact.style.display = "none";
+    bkpkreact.style.display = "none";
+    settingreact.style.display = "none";
+}
+
+function firstlogin() {
+    if (document.getElementById("login").value != "") {
+        const teamname = document.getElementById("login").value;
+        localStorage.setItem('teamname', teamname);
+        $("#teamname").html("隊名:" + localStorage.getItem('teamname'));
+        teannameinput.style.display = "none";
+    } else {
+        /*alert("請輸入隊名");
+        return 0;*/
+    }
+    document.getElementById("passwd").style.animationPlayState = "running";
+    document.getElementById("curse").style.animationPlayState = "running";
+    document.getElementById("bpack").style.animationPlayState = "running";
+    document.getElementById("setting").style.animationPlayState = "running";
+    document.getElementById("bott").style.pointerEvents = "auto";
+    password();
+    localStorage.setItem('LScursestatus', JSON.stringify(cursestat));
+    cu = JSON.parse(localStorage.getItem('LScursestatus'));
+    tmpnow = "00000";
+}
+
 
 function castspell() {
     const spellinput = document.getElementById("spell").value;
@@ -14,7 +57,9 @@ function castspell() {
                 $("#msg").html("密語正確" + "<br>" + spell.spell[i].msg);
                 showconv(document.getElementById("spellconv"));
                 doit(spellinput);
+                break;
             } else { //wrong
+                $("#msg").html("密語錯誤");
                 showconv(document.getElementById("spellconv"));
             }
         }
@@ -69,38 +114,7 @@ function hideconv() {
     document.getElementById("blackk").style.zIndex = 1;
     document.getElementById("spellconv").style.backgroundColor = "#700000";
     document.getElementById("spellconv").style.color = "#FFFFFF";
-    document.getElementById("msg").textContent = "詛咒錯誤";
     $(".blackk").css('opacity', '0');
-}
-
-function firstlogin() {
-    if (document.getElementById("login").value != "") {
-        const teamname = document.getElementById("login").value;
-        localStorage.setItem('teamname', teamname);
-        $("#teamname").html("隊名:" + localStorage.getItem('teamname'));
-        teannameinput.style.display = "none";
-    } else {
-        /*alert("請輸入隊名");
-        return 0;*/
-    }
-    document.getElementById("passwd").style.animationPlayState = "running";
-    document.getElementById("curse").style.animationPlayState = "running";
-    document.getElementById("bpack").style.animationPlayState = "running";
-    document.getElementById("setting").style.animationPlayState = "running";
-    document.getElementById("bott").style.pointerEvents = "auto";
-    password();
-}
-
-function active() {
-    document.getElementById("bott").style.pointerEvents = "none";
-    document.getElementById("passwd").style.animationPlayState = "paused";
-    document.getElementById("curse").style.animationPlayState = "paused";
-    document.getElementById("bpack").style.animationPlayState = "paused";
-    document.getElementById("setting").style.animationPlayState = "paused";
-    pswdreact.style.display = "none";
-    cursereact.style.display = "none";
-    bkpkreact.style.display = "none";
-    settingreact.style.display = "none";
 }
 
 function clearother3(a, b, c) {
@@ -110,45 +124,18 @@ function clearother3(a, b, c) {
 }
 async function checkeye() {
     var eyeimg = document.getElementById("eye");
-    eyeimg.src = "static/image/eye5.png";
-    await sleep(500);
-    eyeimg.src = "static/image/eye0.png";
+    eyeimg.src = "static/image/eye" + tmpnow + ".png";
 }
 
-async function cur1() {
-    var eyeimg = document.getElementById("eye");
-    eyeimg.src = "static/image/eye1.png";
-    await sleep(500);
-    eyeimg.src = "static/image/eye0.png";
-}
+async function cur1() {}
 
-async function cur2() {
-    var eyeimg = document.getElementById("eye");
-    eyeimg.src = "static/image/eye2.png";
-    await sleep(500);
-    eyeimg.src = "static/image/eye0.png";
-}
+async function cur2() {}
 
-async function cur3() {
-    var eyeimg = document.getElementById("eye");
-    eyeimg.src = "static/image/eye3.png";
-    await sleep(500);
-    eyeimg.src = "static/image/eye0.png";
-}
+async function cur3() {}
 
-async function cur4() {
-    var eyeimg = document.getElementById("eye");
-    eyeimg.src = "static/image/eye4.png";
-    await sleep(500);
-    eyeimg.src = "static/image/eye0.png";
-}
+async function cur4() {}
 
-async function cur5() {
-    var eyeimg = document.getElementById("eye");
-    eyeimg.src = "static/image/eye5.png";
-    await sleep(500);
-    eyeimg.src = "static/image/eye0.png";
-}
+async function cur5() {}
 
 function doit(spell) {
     if (spell == "p2") {
@@ -159,6 +146,34 @@ function doit(spell) {
         var item4 = document.getElementById("item4");
         item4.style.display = "none";
     }
+    if (spell == "c1") {
+        cursestat.curse1 = '1';
+        cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();
+    }
+    if (spell == "c2") {
+        cursestat.curse2 = '1';
+        cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();
+    }
+    if (spell == "c3") {
+        cursestat.curse3 = '1';
+        cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();
+    }
+    if (spell == "c4") {
+        cursestat.curse4 = '1';
+        cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();
+    }
+    if (spell == "c5") {
+        if (document.getElementById("eye").src == "static/image/eye11110.png") {
+            cursestat.curse5 = '1';
+            cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();
+        } else {
+            $("#msg").html("條件不足");
+        }
+    }
+    localStorage.setItem('LScursestatus', JSON.stringify(cursestat));
+    cu = JSON.parse(localStorage.getItem('LScursestatus'));
+    console.log(cu);
+    tmpnow = cu.now;
 }
 
 function sleep(ms) {
@@ -170,7 +185,7 @@ function cameraon() {
         video: document.getElementById('preview'), // 預覽
         continuous: true, // 連續掃描
         mirror: false,
-        refractoryPeriod: 5000,
+        refractoryPeriod: 10000,
         backgroundScan: false,
         scanPeriod: 10,
         facingMode: {
@@ -212,6 +227,7 @@ function cameraon() {
     cam.style.left = "85%";
     cam.style.top = "90%";
     cam.setAttribute("onClick", "cameraoff();");
+    pre.style.display = "block";
     pre.style.zIndex = "10";
     //pre.style.width = "40vw";
 
@@ -236,13 +252,11 @@ function cameraoff() {
     cam.setAttribute("onClick", "cameraon();");
     pre.style.zIndex = "0";
     pre.style.width = "0vw";
+    pre.style.display = "none";
 }
 
 function set1() {
     $(".blackk").css('opacity', '1');
     document.getElementById("blackk").style.zIndex = 3;
-    document.getElementById("notdoconv").style.backgroundColor = "#FFE8C2";
-    document.getElementById("notdoconv").style.color = "#000000";
-
     showconv(document.getElementById("notdoconv"));
 }

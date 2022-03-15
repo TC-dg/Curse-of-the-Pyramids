@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--https://pandayoooo.github.io/curseofpharaoh/?openExternalBrowser=1-->
 
 <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -46,7 +47,7 @@
         <video class="preview" id="preview"></video>
     </div>
     <div class="react" id="cursereact">查看詛咒<br><br>
-        <img src="static\image\eye0.png" id="eye" style="height: 40vmin; ">
+        <img src="static\image\eye00000.png" id="eye" style="height: 40vmin; ">
         <div class="cursetext" id="cursetext">
             <button onclick="cur1()">詛咒一</button>
             <button onclick="cur2()">詛咒二</button><br>
@@ -57,17 +58,18 @@
     </div>
     <div class="blackk" id="blackk" onclick="hideconv();"></div>
     <div class="react" id="bkpkreact">背包
+        <!--iframe-->
         <br>
-        <div class="item" id="item1"><img src="static\image\panda.jpg" id="item1jpg"><br>
+        <div class="item" id="item1" onclick="item1();"><img src="static\image\panda.jpg" id="item1jpg"><br>
             <span id="item1title">道具1</span>
         </div>
-        <div class="item" id="item2"><img src="static\image\panda.jpg" id="item2jpg"><br>
+        <div class="item" id="item2" onclick="item2();"><img src="static\image\panda.jpg" id="item2jpg"><br>
             <span id="item2title">道具2</span>
         </div>
-        <div class="item" id="item3"><img src="static\image\panda.jpg" id="item3jpg"><br>
+        <div class="item" id="item3" onclick="item3();"><img src="static\image\panda.jpg" id="item3jpg"><br>
             <span id="item3title">道具3</span>
         </div>
-        <div class="item" id="item4"><img src="static\image\panda2.jpg" id="item4jpg"><br>
+        <div class="item" id="item4" onclick="item4();"><img src="static\image\panda2.jpg" id="item4jpg"><br>
             <span id="item4title">道具4</span>
         </div>
     </div>
@@ -75,17 +77,17 @@
         <button onclick="set1()">禁忌</button><br>
         <button onclick="set2()">任務清單</button><br>
         <button onclick="set3()">Credit</button><br>
-        <div class="conv" id="notdoconv">
-            <div class="close" onclick="hideconv();" id="x">x</div>
-            <div class="msg" id="msg">禁忌說明</div>
-            <p>禁忌一</p>
-            <p>禁忌二</p>
-            <p>禁忌三</p>
-        </div>
     </div>
     <div class="conv" id="spellconv">
         <div class="close" onclick="hideconv();" id="x">x</div>
-        <div class="msg" id="msg">詛咒錯誤</div>
+        <div class="msg" id="msg">密語錯誤</div>
+    </div>
+    <div class="conv" id="notdoconv">
+        <div class="close" onclick="hideconv();" id="x">x</div>
+        <div class="msg">禁忌說明</div><br>
+        <p>禁忌一</p>
+        <p>禁忌二</p>
+        <p>禁忌三</p>
     </div>
     <div class="bott" id="bott">
         <div class="passwd" id="passwd" onclick="password();">

@@ -10,6 +10,8 @@
         "conv",
         "cursee",
         "cursereact",
+        "cursestat",
+        "cursestatus",
         "cursetext",
         "eyeimg",
         "hideconv",
@@ -24,6 +26,7 @@
         "spellconv",
         "spellinput",
         "teamname",
-        "teannameinput"
+        "teannameinput",
+        "tmpnow"
     ]
 }
