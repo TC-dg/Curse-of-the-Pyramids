@@ -168,8 +168,8 @@ function cameraon() {
     let scanner = new Instascan.Scanner({
         continuous: true, // 連續掃描
         video: document.getElementById('preview'), // 預覽
+        mirror: false,
         facingMode: {
-            mirror: false,
             exact: "user"
         }
     });
