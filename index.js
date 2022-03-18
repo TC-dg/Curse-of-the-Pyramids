@@ -226,21 +226,19 @@ function cameraon() {
     });
     const pre = document.getElementById("preview");
     const cam = document.getElementById("camera");
-    cam.style.left = "85%";
-    cam.style.top = "90%";
+    cam.style.display = "none";
     pre.style.display = "block";
     pre.style.zIndex = "10";
-    //pre.style.width = "40vw";
+    pre.style.width = "40vw";
 
     setTimeout(function () {
         const pre = document.getElementById("preview");
         const cam = document.getElementById("camera");
         scanner.stop();
-        cam.style.left = "50%";
-        cam.style.top = "65%";
+        cam.style.display = "block";
+        pre.style.display = "none";
         pre.style.zIndex = "0";
         pre.style.width = "0vw";
-        pre.style.display = "none";
     }, 10000);
 }
 
