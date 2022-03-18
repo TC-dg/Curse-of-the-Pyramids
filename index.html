@@ -61,25 +61,22 @@
     </div>
     <div class="blackk" id="blackk" onclick="hideconv();"></div>
     <div class="react" id="bkpkreact">背包
-        <!--iframe-->
         <br>
-        <div class="item" id="item1" onclick="item1();"><img src="static\image\panda.jpg" id="item1jpg"><br>
-            <span id="item1title">道具1</span>
-        </div>
-        <div class="item" id="item2" onclick="item2();"><img src="static\image\panda.jpg" id="item2jpg"><br>
-            <span id="item2title">道具2</span>
-        </div>
-        <div class="item" id="item3" onclick="item3();"><img src="static\image\panda.jpg" id="item3jpg"><br>
-            <span id="item3title">道具3</span>
-        </div>
-        <div class="item" id="item4" onclick="item4();"><img src="static\image\panda2.jpg" id="item4jpg"><br>
-            <span id="item4title">道具4</span>
-        </div>
+        <iframe class="packframe" id="packframe" src="pack.html" style="border:none;overflow:hidden;">
+            你的瀏覽器不支援 iframe
+        </iframe>
     </div>
-    <div class="react" id="settingreact">設定/任務清單<br><br>
+    <div class=" react" id="settingreact">設定/任務清單<br><br>
         <button onclick="set1()">禁忌</button><br>
         <button onclick="set2()">任務清單</button><br>
         <button onclick="set3()">Credit</button><br>
+    </div>
+    <div class="conv" id="itemconv">
+        <div class="close" onclick="hideconv();" id="x">x</div>
+        你確定要使用
+        <span class="msg" id="itemn"> 道具名稱 </span>
+        嗎 <br>
+        <button onclick="yes()">是</button><br>
     </div>
     <div class="conv" id="spellconv">
         <div class="close" onclick="hideconv();" id="x">x</div>

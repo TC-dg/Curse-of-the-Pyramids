@@ -13,9 +13,13 @@
         "cursestat",
         "cursestatus",
         "cursetext",
+        "elmnt",
         "eyeimg",
         "hideconv",
         "hidespellconv",
+        "itemnumber",
+        "itemnumberjpg",
+        "itemnumbertitle",
         "notat",
         "notdoconv",
         "Prec",
@@ -27,6 +31,7 @@
         "spellinput",
         "teamname",
         "teannameinput",
-        "tmpnow"
+        "tmpnow",
+        "useitem"
     ]
 }

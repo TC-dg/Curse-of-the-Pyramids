@@ -7,12 +7,14 @@ var cursestat = {
     'now': '00000',
 }
 
-window.onload = function () {
+/*window.onload = function () {
     active();
-}
+}*/
+document.addEventListener("DOMContentLoaded", function (event) {
+    active();
+});
 
 function active() {
-    document.getElementById("bott").style.pointerEvents = "none";
     document.getElementById("passwd").style.animationPlayState = "paused";
     document.getElementById("curse").style.animationPlayState = "paused";
     document.getElementById("bpack").style.animationPlayState = "paused";
@@ -21,6 +23,7 @@ function active() {
     cursereact.style.display = "none";
     bkpkreact.style.display = "none";
     settingreact.style.display = "none";
+    document.getElementById("bott").style.pointerEvents = "none";
 }
 
 function firstlogin() {
@@ -104,12 +107,13 @@ function settings() {
     document.getElementsByClassName("setting")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 2px;background-color: rgba(0, 0, 0, 0.3);");
 }
 
-function showconv(conver) {
-    conver.style.display = "block";
+function showconv(c) {
+    c.style.display = "block";
 }
 
 function hideconv() {
     spellconv.style.display = "none";
+    itemconv.style.display = "none";
     notdoconv.style.display = "none";
     document.getElementById("blackk").style.zIndex = 1;
     document.getElementById("spellconv").style.backgroundColor = "#700000";
@@ -261,7 +265,79 @@ function cameraon() {
 }
 
 
+function item1() {
+    window.parent.document.getElementById("itemn").innerHTML = item1title.innerText;
+    window.parent.document.getElementById("blackk").style.opacity = 1;
+    window.parent.document.getElementById("blackk").style.zIndex = 3;
+    showconv(window.parent.document.getElementById("itemconv"));
+    itemnum = 1;
+    localStorage.setItem("itemnum", itemnum);
+
+}
+
+function item2() {
+    $("#itemn").html(item2title.innerText);
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    showconv(document.getElementById("itemconv"));
+    itemnum = 2;
+    localStorage.setItem("itemnum", itemnum);
+
+}
+
+function item3() {
+    $("#itemn").html(item3title.innerText);
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    showconv(document.getElementById("itemconv"));
+    itemnum = 3;
+    localStorage.setItem("itemnum", itemnum);
+
+}
+
+function item4() {
+    $("#itemn").html(item4title.innerText);
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    showconv(document.getElementById("itemconv"));
+    itemnum = 4;
+    localStorage.setItem("itemnum", itemnum);
+
+}
+
+function yes() {
+    itemnum = localStorage.getItem("itemnum");
+    useitem(itemnum);
+
+    function useitem(itemnum) {
+        itemconv.style.display = "none";
+        document.getElementById("blackk").style.zIndex = 1;
+        $(".blackk").css('opacity', '0');
+        itemnumbertitle = "item" + itemnum + "title";
+        itemnumberjpg = "item" + itemnum + "jpg";
+        itemandnumber = "item" + itemnum;
+        var iframe = document.getElementById("packframe");
+        var elmnt = iframe.contentWindow.document.getElementById(itemandnumber);
+        var title = iframe.contentWindow.document.getElementById(itemnumbertitle);
+        var jpg = iframe.contentWindow.document.getElementById(itemnumberjpg);
+        elmnt.style.display = "none";
+    }
+}
+
+
 function set1() {
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    showconv(document.getElementById("notdoconv"));
+}
+
+function set2() {
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    showconv(document.getElementById("notdoconv"));
+}
+
+function set3() {
     $(".blackk").css('opacity', '1');
     document.getElementById("blackk").style.zIndex = 3;
     showconv(document.getElementById("notdoconv"));
