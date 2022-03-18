@@ -240,7 +240,7 @@ function cameraon() {
     cam.style.display = "none";
     pre.style.display = "block";
     pre.style.zIndex = "10";
-    pre.style.width = "40vw";
+    pre.style.width = "4vw";
 
     setTimeout(function () {
         const pre = document.getElementById("preview");
