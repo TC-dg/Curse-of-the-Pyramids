@@ -212,7 +212,7 @@ function cameraon() {
     });
 
     Instascan.Camera.getCameras().then(function (cameras) {
-        $('.camera_list li').empty();
+        /*$('.camera_list li').empty();
         if (cameras.length > 0) {
             cameras.forEach(function (c, i) {
                 camera_name = c.name;
@@ -231,6 +231,13 @@ function cameraon() {
             }
         } else {
             alert("找不到相機...請確認允許使用相機");
+        }*/
+        if (cameras.length > 1) {
+            scanner.start(cameras[1]); // [0] 前鏡頭 [1] 後鏡頭 
+        } else if (cameras.length > 0) {
+            scanner.start(cameras[0]);
+        } else {
+            console.error('沒有找到相機');
         }
     }).catch(function (e) {
         console.error(e);
@@ -240,7 +247,7 @@ function cameraon() {
     cam.style.display = "none";
     pre.style.display = "block";
     pre.style.zIndex = "10";
-    pre.style.width = "4vw";
+    pre.style.width = "40vw";
 
     setTimeout(function () {
         const pre = document.getElementById("preview");
