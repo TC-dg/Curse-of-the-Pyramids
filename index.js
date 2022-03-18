@@ -212,7 +212,7 @@ function cameraon() {
     });
 
     Instascan.Camera.getCameras().then(function (cameras) {
-        alert(cameras.length);
+        $("#teamname").html(cameras.length);
         //scanner.start(cameras[-1]);
         if (cameras.length > 1) {
             scanner.start(cameras[1]); // [0] 前鏡頭 [1] 後鏡頭 
