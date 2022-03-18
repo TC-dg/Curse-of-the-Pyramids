@@ -212,10 +212,12 @@ function cameraon() {
     });
 
     Instascan.Camera.getCameras().then(function (cameras) {
-        $("#teamname").html(cameras.length);
+        console.log(cameras.length);
+        console.log(cameras[0]);
+        console.log(cameras[-1]);
         //scanner.start(cameras[-1]);
         if (cameras.length > 1) {
-            scanner.start(cameras[1]); // [0] 前鏡頭 [1] 後鏡頭 
+            scanner.start(cameras[0]); // [0] 前鏡頭 [1] 後鏡頭 
         } else if (cameras.length > 0) {
             scanner.start(cameras[0]);
         } else {
