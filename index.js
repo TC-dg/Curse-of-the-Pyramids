@@ -212,16 +212,25 @@ function cameraon() {
     });
 
     Instascan.Camera.getCameras().then(function (cameras) {
-        console.log(cameras.length);
-        console.log(cameras[0]);
-        console.log(cameras[-1]);
-        //scanner.start(cameras[-1]);
-        if (cameras.length > 1) {
-            scanner.start(cameras[0]); // [0] 前鏡頭 [1] 後鏡頭 
-        } else if (cameras.length > 0) {
-            scanner.start(cameras[0]);
+        $('.camera_list li').empty();
+        if (cameras.length > 0) {
+            cameras.forEach(function (c, i) {
+                camera_name = c.name;
+                camera_id = i;
+                $('.camera_list').append('<li id=' + i + ' class="items"><i class="fa fa-camera fa-lg" aria-hidden="true"></i> 鏡頭 ' + (camera_id + 1) + ' </li>');
+            });
+
+            $(".camera_list li").click(function () {
+                active = $(this).attr("id");
+                scanner.start(cameras[active]);
+            });
+            if (cameras.length >= 2) {
+                scanner.start(cameras[1]);
+            } else {
+                scanner.start(cameras[0]);
+            }
         } else {
-            console.error('沒有找到相機');
+            alert("找不到相機...請確認允許使用相機");
         }
     }).catch(function (e) {
         console.error(e);
