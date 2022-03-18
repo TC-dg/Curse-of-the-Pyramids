@@ -212,10 +212,12 @@ function cameraon() {
     });
 
     Instascan.Camera.getCameras().then(function (cameras) {
+        alert(cameras.length);
+        //scanner.start(cameras[-1]);
         if (cameras.length > 1) {
             scanner.start(cameras[1]); // [0] 前鏡頭 [1] 後鏡頭 
         } else if (cameras.length > 0) {
-            scanner.start(cameras[0]); // [0] 前鏡頭 [1] 後鏡頭 
+            scanner.start(cameras[0]);
         } else {
             console.error('沒有找到相機');
         }
@@ -226,34 +228,22 @@ function cameraon() {
     const cam = document.getElementById("camera");
     cam.style.left = "85%";
     cam.style.top = "90%";
-    cam.setAttribute("onClick", "cameraoff();");
     pre.style.display = "block";
     pre.style.zIndex = "10";
     //pre.style.width = "40vw";
 
+    setTimeout(function () {
+        const pre = document.getElementById("preview");
+        const cam = document.getElementById("camera");
+        scanner.stop();
+        cam.style.left = "50%";
+        cam.style.top = "65%";
+        pre.style.zIndex = "0";
+        pre.style.width = "0vw";
+        pre.style.display = "none";
+    }, 10000);
 }
 
-function cameraoff() {
-    let scanner = new Instascan.Scanner({
-        continuous: true, // 連續掃描
-        video: document.getElementById('preview'), // 預覽
-        mirror: false,
-        refractoryPeriod: 5000,
-        backgroundScan: false,
-        facingMode: {
-            exact: "environment"
-        }
-    });
-    scanner.stop();
-    const pre = document.getElementById("preview");
-    const cam = document.getElementById("camera");
-    cam.style.left = "50%";
-    cam.style.top = "65%";
-    cam.setAttribute("onClick", "cameraon();");
-    pre.style.zIndex = "0";
-    pre.style.width = "0vw";
-    pre.style.display = "none";
-}
 
 function set1() {
     $(".blackk").css('opacity', '1');
