@@ -6,17 +6,8 @@
         "condition": "money",
         "action": ""
     }, {
-        "name": "money",
-        "msg": "給你錢(´・ω・｀)"
-    }, {
-        "name": "小公主",
-        "msg": "不好說"
-    }, {
         "name": "p2",
         "msg": "panda2 has changed"
-    }, {
-        "name": "0.0",
-        "msg": "٩(๑òωó๑)۶٩(๑òωó๑)۶٩(๑òωó๑)۶"
     }, {
         "name": "c1",
         "msg": "詛咒1已解開"
@@ -31,6 +22,42 @@
         "msg": "詛咒4已解開"
     }, {
         "name": "c5",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "Compass",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "6 ad6a6y",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "SkyEnglish",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "Afterglow",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "SleepYandSand",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "ComePass",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "BoneBoneBone",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "0x480x650x78",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "FreshPootau",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "YouCantDrive",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "Max6a6y",
+        "msg": "詛咒5已解開"
+    }, {
+        "name": "Ramses6a6y",
         "msg": "詛咒5已解開"
     }]
 }

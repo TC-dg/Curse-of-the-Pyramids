@@ -31,7 +31,7 @@ body {
 }
 
 .topp {
-    position: relative;
+    position: fixed;
     background-image: url("static/image/woodbar.jpg");
     background-size: cover;
     background-repeat: repeat-x;
@@ -39,7 +39,8 @@ body {
     background-size: 50%;
     z-index: 999;
     box-sizing: content-box;
-    height: 5%;
+    height: 30px;
+    width: 100%;
 }
 
 .san {
@@ -71,29 +72,21 @@ body {
     left: 50%;
     height: 87%;
     width: 80%;*/
-    top: 50%;
+    top: 47.5%;
     left: 50%;
-    height: 80%;
+    height: 85%;
     width: 90%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    border: 2vw double rgba(250, 250, 93, 0.89);
+    border: 10px double rgba(250, 250, 93, 0.89);
     z-index: 2;
     display: block;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
-.nowat {
-    border-color: #33ccff;
-    border-style: solid;
-    border-radius: 10px;
-    border-width: 2px;
-    background-color: rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
 
 .blackk {
     clear: both;
@@ -114,13 +107,15 @@ body {
     background-attachment: fixed;
     background-size: 50%;
     background-repeat: repeat;
-    position: absolute;
-    bottom: 0%;
+    position: fixed;
     width: 100%;
     height: auto;
     margin: 0 auto;
     text-align: center;
     z-index: 999;
+    height: 60px;
+    box-sizing: border-box;
+    bottom: 0;
 }
 
 .passwd,
@@ -191,7 +186,7 @@ body {
 
 .spellinput {
     font-size: 25px;
-    width: 65%;
+    width: 70%;
     height: 50px;
     text-align: center;
 }

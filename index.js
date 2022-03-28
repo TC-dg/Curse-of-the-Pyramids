@@ -59,7 +59,7 @@ function castspell() {
                 document.getElementById("spellconv").style.color = "#000000";
                 $("#msg").html("密語正確" + "<br>" + spell.spell[i].msg);
                 showconv(document.getElementById("spellconv"));
-                doit(spellinput);
+                doit(spell.spell[i]);
                 break;
             } else { //wrong
                 $("#msg").html("密語錯誤");
@@ -75,7 +75,7 @@ function password() {
     bkpkreact.style.display = "none";
     settingreact.style.display = "none";
     clearother3("curse", "bpack", "setting");
-    document.getElementsByClassName("passwd")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 2px;background-color: rgba(0, 0, 0, 0.3);");
+    document.getElementsByClassName("passwd")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 3px;background-color: rgba(0, 0, 0, 0.3);");
 }
 
 function curse() {
@@ -84,7 +84,7 @@ function curse() {
     settingreact.style.display = "none";
     cursereact.style.display = "block";
     clearother3("passwd", "bpack", "setting");
-    document.getElementsByClassName("curse")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 2px;background-color: rgba(0, 0, 0, 0.3);");
+    document.getElementsByClassName("curse")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 3px;background-color: rgba(0, 0, 0, 0.3);");
     checkeye();
 }
 
@@ -94,7 +94,7 @@ function backpack() {
     bkpkreact.style.display = "block";
     settingreact.style.display = "none";
     clearother3("passwd", "curse", "setting");
-    document.getElementsByClassName("bpack")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 2px;background-color: rgba(0, 0, 0, 0.3);");
+    document.getElementsByClassName("bpack")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 3px;background-color: rgba(0, 0, 0, 0.3);");
     //tt();
 }
 
@@ -104,11 +104,17 @@ function settings() {
     bkpkreact.style.display = "none";
     settingreact.style.display = "block";
     clearother3("passwd", "curse", "bpack");
-    document.getElementsByClassName("setting")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 2px;background-color: rgba(0, 0, 0, 0.3);");
+    document.getElementsByClassName("setting")[0].setAttribute("style", "border-color: #33ccff;border-style:solid;border-radius: 10px;border-width: 3px;background-color: rgba(0, 0, 0, 0.3);");
 }
 
 function showconv(c) {
     c.style.display = "block";
+}
+
+function clearother3(a, b, c) {
+    document.getElementsByClassName(a)[0].setAttribute("style", " ");
+    document.getElementsByClassName(b)[0].setAttribute("style", " ");
+    document.getElementsByClassName(c)[0].setAttribute("style", " ");
 }
 
 function hideconv() {
@@ -124,11 +130,6 @@ function hideconv() {
     $(".blackk").css('opacity', '0');
 }
 
-function clearother3(a, b, c) {
-    document.getElementsByClassName(a)[0].setAttribute("style", " ");
-    document.getElementsByClassName(b)[0].setAttribute("style", " ");
-    document.getElementsByClassName(c)[0].setAttribute("style", " ");
-}
 async function checkeye() {
     var eyeimg = document.getElementById("eye");
     eyeimg.src = "static/image/eye" + tmpnow + ".png";
@@ -139,8 +140,8 @@ async function cur1() {
     document.getElementById("blackk").style.zIndex = 3;
     var cursemsgtitle = document.getElementById("cursemsgtitle");
     var cursemsg = document.getElementById("cursemsg");
-    cursemsgtitle.innerText = "詛咒1";
-    cursemsg.innerText = "詛咒1的說明啦 2ㄏ";
+    cursemsgtitle.innerText = "災難1";
+    cursemsg.innerText = "災難1的說明啦 2ㄏ";
     showconv(document.getElementById("curseconv"));
 }
 
@@ -149,8 +150,8 @@ async function cur2() {
     document.getElementById("blackk").style.zIndex = 3;
     var cursemsgtitle = document.getElementById("cursemsgtitle");
     var cursemsg = document.getElementById("cursemsg");
-    cursemsgtitle.innerText = "詛咒2";
-    cursemsg.innerText = "詛咒2的說明啦 2ㄏ";
+    cursemsgtitle.innerText = "災難2";
+    cursemsg.innerText = "災難2的說明啦 2ㄏ";
     showconv(document.getElementById("curseconv"));
 }
 
@@ -159,8 +160,8 @@ async function cur3() {
     document.getElementById("blackk").style.zIndex = 3;
     var cursemsgtitle = document.getElementById("cursemsgtitle");
     var cursemsg = document.getElementById("cursemsg");
-    cursemsgtitle.innerText = "詛咒3";
-    cursemsg.innerText = "詛咒3的說明啦 2ㄏ";
+    cursemsgtitle.innerText = "災難3";
+    cursemsg.innerText = "災難3的說明啦 2ㄏ";
     showconv(document.getElementById("curseconv"));
 }
 
@@ -169,8 +170,8 @@ async function cur4() {
     document.getElementById("blackk").style.zIndex = 3;
     var cursemsgtitle = document.getElementById("cursemsgtitle");
     var cursemsg = document.getElementById("cursemsg");
-    cursemsgtitle.innerText = "詛咒4";
-    cursemsg.innerText = "詛咒4的說明啦 2ㄏ";
+    cursemsgtitle.innerText = "災難4";
+    cursemsg.innerText = "災難4的說明啦 2ㄏ";
     showconv(document.getElementById("curseconv"));
 }
 
@@ -179,13 +180,13 @@ async function cur5() {
     document.getElementById("blackk").style.zIndex = 3;
     var cursemsgtitle = document.getElementById("cursemsgtitle");
     var cursemsg = document.getElementById("cursemsg");
-    cursemsgtitle.innerText = "詛咒5";
-    cursemsg.innerText = "詛咒5的說明啦 2ㄏ";
+    cursemsgtitle.innerText = "災難5";
+    cursemsg.innerText = "災難5的說明啦 2ㄏ";
     showconv(document.getElementById("curseconv"));
 }
 
 function doit(spell) {
-    if (spell == "p2") {
+    if (spell.name == "p2") {
         itemnum = 2;
         itemnumbertitle = "item" + itemnum + "title";
         itemnumberjpg = "item" + itemnum + "jpg";
@@ -197,23 +198,23 @@ function doit(spell) {
         jpg.src = "static/image/panda2.jpg";
         title.innerText = "熊貓變了";
     }
-    if (spell == "c1") {
+    if (spell.name == "c1") {
         cursestat.curse1 = '1';
         cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();
     }
-    if (spell == "c2") {
+    if (spell.name == "c2") {
         cursestat.curse2 = '1';
         cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();
     }
-    if (spell == "c3") {
+    if (spell.name == "c3") {
         cursestat.curse3 = '1';
         cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();
     }
-    if (spell == "c4") {
+    if (spell.name == "c4") {
         cursestat.curse4 = '1';
         cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();
     }
-    if (spell == "c5") {
+    if (spell.name == "c5") {
         if (document.getElementById("eye").src == "static/image/eye11110.png") {
             cursestat.curse5 = '1';
             cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();
