@@ -26,7 +26,7 @@
                 role="progressbar" style="width: 50%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">87%
             </div>
         </div>
-        <div class="teamname topp" id="teamname"> 隊名:總召小尾婷 </div>
+        <div class="teamname" id="teamname"> 隊名:總召小尾婷 </div>
     </div>
     <div class="react" id="teannameinput">隊名tt
         <br><br>
@@ -82,12 +82,31 @@
         <div class="close" onclick="hideconv();" id="x">x</div>
         <div class="msg" id="msg">密語錯誤</div>
     </div>
+    <div class="conv" id="curseconv">
+        <div class="close" onclick="hideconv();" id="x">x</div>
+        <div class="msg" id="cursemsgtitle">詛咒2ㄏ</div><br>
+        <p id="cursemsg"> 詛咒說明的啦 </p>
+    </div>
     <div class="conv" id="notdoconv">
         <div class="close" onclick="hideconv();" id="x">x</div>
         <div class="msg">禁忌說明</div><br>
         <p>禁忌一</p>
         <p>禁忌二</p>
         <p>禁忌三</p>
+    </div>
+    <div class="conv" id="questconv">
+        <div class="close" onclick="hideconv();" id="x">x</div>
+        <div class="msg">任務清單</div><br>
+        <p>任務一 痛扁金阿猴</p>
+        <p>任務二 雙倍OREO</p>
+        <p>任務三 兩個禮拜以後 不要忘記 不要錯過</p>
+    </div>
+    <div class="conv" id="creditconv">
+        <div class="close" onclick="hideconv();" id="x">x</div>
+        <div class="msg">製作者</div><br>
+        <p>B10917037 余昭佑</p>
+        <p>B11017002 陳詩恩</p>
+        <p>彩蛋 money10</p>
     </div>
     <div class="bott" id="bott">
         <div class="passwd" id="passwd" onclick="password();">
@@ -97,7 +116,7 @@
         <div class="bpack" id="bpack" onclick="backpack();">
             <img src="static\image\backpack.png" width="30" height="30"><br> 背包 </div>
         <div class="setting" id="setting" onclick="settings();">
-            <img src="static\image\setting.png" width="30" height="30"><br> 設定 </div>
+            <img src="static\image\setting.png" width="30" height="30"><br> 其它 </div>
     </div>
 </body>
 

@@ -38,6 +38,8 @@ body {
     background-attachment: fixed;
     background-size: 50%;
     z-index: 999;
+    box-sizing: content-box;
+    height: 5%;
 }
 
 .san {
@@ -61,22 +63,27 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 36px;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     position: absolute;
     text-align: center;
-    top: 48%;
+    /*top: 48%;
     left: 50%;
     height: 87%;
-    width: 80%;
+    width: 80%;*/
+    top: 50%;
+    left: 50%;
+    height: 80%;
+    width: 90%;
     transform: translate(-50%, -50%);
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    border: 10px double rgba(250, 250, 93, 0.89);
+    border: 2vw double rgba(250, 250, 93, 0.89);
     z-index: 2;
     display: block;
+    box-sizing: content-box;
 }
 
 .nowat {
@@ -110,6 +117,7 @@ body {
     position: absolute;
     bottom: 0%;
     width: 100%;
+    height: auto;
     margin: 0 auto;
     text-align: center;
     z-index: 999;
@@ -182,9 +190,9 @@ body {
 }
 
 .spellinput {
-    font-size: 30px;
+    font-size: 25px;
     width: 65%;
-    height: 40px;
+    height: 50px;
     text-align: center;
 }
 

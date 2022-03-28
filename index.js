@@ -115,6 +115,9 @@ function hideconv() {
     spellconv.style.display = "none";
     itemconv.style.display = "none";
     notdoconv.style.display = "none";
+    questconv.style.display = "none";
+    creditconv.style.display = "none";
+    curseconv.style.display = "none";
     document.getElementById("blackk").style.zIndex = 1;
     document.getElementById("spellconv").style.backgroundColor = "#700000";
     document.getElementById("spellconv").style.color = "#FFFFFF";
@@ -131,24 +134,68 @@ async function checkeye() {
     eyeimg.src = "static/image/eye" + tmpnow + ".png";
 }
 
-async function cur1() {}
+async function cur1() {
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    var cursemsgtitle = document.getElementById("cursemsgtitle");
+    var cursemsg = document.getElementById("cursemsg");
+    cursemsgtitle.innerText = "詛咒1";
+    cursemsg.innerText = "詛咒1的說明啦 2ㄏ";
+    showconv(document.getElementById("curseconv"));
+}
 
-async function cur2() {}
+async function cur2() {
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    var cursemsgtitle = document.getElementById("cursemsgtitle");
+    var cursemsg = document.getElementById("cursemsg");
+    cursemsgtitle.innerText = "詛咒2";
+    cursemsg.innerText = "詛咒2的說明啦 2ㄏ";
+    showconv(document.getElementById("curseconv"));
+}
 
-async function cur3() {}
+async function cur3() {
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    var cursemsgtitle = document.getElementById("cursemsgtitle");
+    var cursemsg = document.getElementById("cursemsg");
+    cursemsgtitle.innerText = "詛咒3";
+    cursemsg.innerText = "詛咒3的說明啦 2ㄏ";
+    showconv(document.getElementById("curseconv"));
+}
 
-async function cur4() {}
+async function cur4() {
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    var cursemsgtitle = document.getElementById("cursemsgtitle");
+    var cursemsg = document.getElementById("cursemsg");
+    cursemsgtitle.innerText = "詛咒4";
+    cursemsg.innerText = "詛咒4的說明啦 2ㄏ";
+    showconv(document.getElementById("curseconv"));
+}
 
-async function cur5() {}
+async function cur5() {
+    $(".blackk").css('opacity', '1');
+    document.getElementById("blackk").style.zIndex = 3;
+    var cursemsgtitle = document.getElementById("cursemsgtitle");
+    var cursemsg = document.getElementById("cursemsg");
+    cursemsgtitle.innerText = "詛咒5";
+    cursemsg.innerText = "詛咒5的說明啦 2ㄏ";
+    showconv(document.getElementById("curseconv"));
+}
 
 function doit(spell) {
     if (spell == "p2") {
-        var title = document.getElementById("item2title");
-        var jpg = document.getElementById("item2jpg");
+        itemnum = 2;
+        itemnumbertitle = "item" + itemnum + "title";
+        itemnumberjpg = "item" + itemnum + "jpg";
+        itemandnumber = "item" + itemnum;
+        var iframe = document.getElementById("packframe");
+        var elmnt = iframe.contentWindow.document.getElementById(itemandnumber);
+        var title = iframe.contentWindow.document.getElementById(itemnumbertitle);
+        var jpg = iframe.contentWindow.document.getElementById(itemnumberjpg);
         jpg.src = "static/image/panda2.jpg";
         title.innerText = "熊貓變了";
-        var item4 = document.getElementById("item4");
-        item4.style.display = "none";
     }
     if (spell == "c1") {
         cursestat.curse1 = '1';
@@ -266,47 +313,44 @@ function cameraon() {
 
 
 function item1() {
+    itemnum = 1;
+    localStorage.setItem("itemnum", itemnum);
     window.parent.document.getElementById("itemn").innerHTML = item1title.innerText;
     window.parent.document.getElementById("blackk").style.opacity = 1;
     window.parent.document.getElementById("blackk").style.zIndex = 3;
     showconv(window.parent.document.getElementById("itemconv"));
-    itemnum = 1;
-    localStorage.setItem("itemnum", itemnum);
-
 }
 
 function item2() {
-    $("#itemn").html(item2title.innerText);
-    $(".blackk").css('opacity', '1');
-    document.getElementById("blackk").style.zIndex = 3;
-    showconv(document.getElementById("itemconv"));
     itemnum = 2;
     localStorage.setItem("itemnum", itemnum);
-
+    window.parent.document.getElementById("itemn").innerHTML = item2title.innerText;
+    window.parent.document.getElementById("blackk").style.opacity = 1;
+    window.parent.document.getElementById("blackk").style.zIndex = 3;
+    showconv(window.parent.document.getElementById("itemconv"));
 }
 
 function item3() {
-    $("#itemn").html(item3title.innerText);
-    $(".blackk").css('opacity', '1');
-    document.getElementById("blackk").style.zIndex = 3;
-    showconv(document.getElementById("itemconv"));
     itemnum = 3;
     localStorage.setItem("itemnum", itemnum);
-
+    window.parent.document.getElementById("itemn").innerHTML = item3title.innerText;
+    window.parent.document.getElementById("blackk").style.opacity = 1;
+    window.parent.document.getElementById("blackk").style.zIndex = 3;
+    showconv(window.parent.document.getElementById("itemconv"));
 }
 
 function item4() {
-    $("#itemn").html(item4title.innerText);
-    $(".blackk").css('opacity', '1');
-    document.getElementById("blackk").style.zIndex = 3;
-    showconv(document.getElementById("itemconv"));
     itemnum = 4;
     localStorage.setItem("itemnum", itemnum);
-
+    window.parent.document.getElementById("itemn").innerHTML = item4title.innerText;
+    window.parent.document.getElementById("blackk").style.opacity = 1;
+    window.parent.document.getElementById("blackk").style.zIndex = 3;
+    showconv(window.parent.document.getElementById("itemconv"));
 }
 
 function yes() {
     itemnum = localStorage.getItem("itemnum");
+    console.log(itemnum);
     useitem(itemnum);
 
     function useitem(itemnum) {
@@ -334,11 +378,11 @@ function set1() {
 function set2() {
     $(".blackk").css('opacity', '1');
     document.getElementById("blackk").style.zIndex = 3;
-    showconv(document.getElementById("notdoconv"));
+    showconv(document.getElementById("questconv"));
 }
 
 function set3() {
     $(".blackk").css('opacity', '1');
     document.getElementById("blackk").style.zIndex = 3;
-    showconv(document.getElementById("notdoconv"));
+    showconv(document.getElementById("creditconv"));
 }
