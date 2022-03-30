@@ -53,17 +53,27 @@ body {
     float: left;
     width: 25%;
     height: 15px;
+    animation-fill-mode: forwards;
+    animation-name: beforeye;
+    animation-duration: 5s;
 }
+
+
 
 .teamname {
     float: right;
+}
+
+#teannameinput button {
+    color: rgb(255, 255, 0);
+    background-color: rgb(19, 116, 0);
 }
 
 .react {
     background-image: url("static/image/woodbar.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    font-size: 36px;
+    font-size: 40px;
     margin: 0 auto;
     padding: 0;
     position: absolute;
@@ -81,12 +91,21 @@ body {
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
-    border: 10px double rgba(250, 250, 93, 0.89);
+    border: 10px double rgb(163, 78, 243);
     z-index: 2;
     display: block;
     box-sizing: border-box;
 }
 
+.react button {
+    font-size: 25px;
+}
+
+.react input {
+    font-size: 25px;
+    width: 70%;
+    height: 50px;
+}
 
 .blackk {
     clear: both;
@@ -118,11 +137,8 @@ body {
     bottom: 0;
 }
 
-.passwd,
-.curse,
-.bpack,
-.setting {
-    font-size: 16px;
+.icon {
+    font-size: 18px;
     clear: both;
     box-sizing: border-box;
     display: inline-block;
@@ -131,6 +147,7 @@ body {
     padding-left: 0%;
     padding-right: 0%;
     width: 20%;
+    height: 60px;
     cursor: pointer;
     animation-fill-mode: forwards;
     animation-name: firstlogin;
@@ -145,7 +162,7 @@ body {
     width: 60px;
     height: 60px;
     box-sizing: content-box;
-    border: 5px double rgba(250, 250, 93, 1);
+    border: 5px double rgb(163, 78, 243);
     transform: translate(-50%, -50%);
     left: 50%;
     top: 80%;
@@ -191,6 +208,12 @@ body {
     text-align: center;
 }
 
+#pswdreact button {
+
+    color: rgb(223, 9, 252);
+    background-color: rgb(77, 190, 83);
+}
+
 .cursetext {
     font-size: 20px;
     padding-left: 3%;
@@ -198,16 +221,16 @@ body {
 }
 
 .cursetext button {
-    color: #17c8f5;
+    color: rgb(27, 228, 255);
+    background-color: rgb(133, 32, 32);
     font-family: cursive;
     margin-top: 15%;
     margin-left: 2%;
     margin-right: 2%;
-    background-color: rgb(133, 32, 32);
 }
 
 .conv {
-    font-size: 28px;
+    font-size: 25px;
     position: absolute;
     text-align: center;
     top: 40%;
@@ -242,7 +265,7 @@ body {
 }
 
 #itemconv {
-    font-size: 22px;
+    font-size: 25px;
     position: absolute;
     top: 45%;
     text-align: center;
@@ -261,7 +284,7 @@ body {
 }
 
 .item {
-    font-size: 16px;
+    font-size: 20px;
     display: inline-block;
     width: 47vw;
     margin-bottom: 1%;
@@ -280,6 +303,6 @@ body {
     margin: 3%;
     width: 50vw;
     height: 7vh;
-    background-color: rgb(226, 187, 113);
-    border: 10px double rgba(243, 20, 20, 0.616);
+    background-color: rgb(236, 196, 136);
+    border: 10px double rgb(216, 77, 135);
 }

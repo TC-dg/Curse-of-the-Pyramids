@@ -7,57 +7,76 @@
         "action": ""
     }, {
         "name": "p2",
-        "msg": "panda2 has changed"
+        "msg": "panda2 has changed",
+        "action": "itemnum = 2;itemnumbertitle = 'item' + itemnum + 'title';itemnumberjpg = 'item' + itemnum + 'jpg';itemandnumber = 'item' + itemnum;var iframe = document.getElementById('packframe');var elmnt = iframe.contentWindow.document.getElementById(itemandnumber);var title = iframe.contentWindow.document.getElementById(itemnumbertitle);var jpg = iframe.contentWindow.document.getElementById(itemnumberjpg);jpg.src = 'static/image/panda2.jpg';title.innerText = '熊貓變了';"
     }, {
         "name": "c1",
-        "msg": "詛咒1已解開"
+        "msg": "詛咒1已解開",
+        "action": "cursestat.curse1 = '1';cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();"
     }, {
         "name": "c2",
-        "msg": "詛咒2已解開"
+        "msg": "詛咒2已解開",
+        "action": "cursestat.curse2 = '1';cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();"
     }, {
         "name": "c3",
-        "msg": "詛咒3已解開"
+        "msg": "詛咒3已解開",
+        "action": "cursestat.curse3 = '1';cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();"
     }, {
         "name": "c4",
-        "msg": "詛咒4已解開"
+        "msg": "詛咒4已解開",
+        "action": "cursestat.curse4 = '1';cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();"
     }, {
         "name": "c5",
-        "msg": "詛咒5已解開"
+        "msg": "詛咒5已解開",
+        "condition": "document.getElementById('eye').src == 'static/image/eye11110.png'",
+        "action": "cursestat.curse5 = '1';cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();"
     }, {
         "name": "Compass",
-        "msg": "詛咒5已解開"
+        "msg": "指南針",
+        "action": " "
     }, {
-        "name": "6 ad6a6y",
-        "msg": "詛咒5已解開"
+        "name": "6ad6a6y",
+        "msg": "壞傳家寶",
+        "action": " "
     }, {
         "name": "SkyEnglish",
-        "msg": "詛咒5已解開"
+        "msg": "天鷹之羽",
+        "action": " "
     }, {
         "name": "Afterglow",
-        "msg": "詛咒5已解開"
+        "msg": "落陽之金",
+        "action": " "
     }, {
         "name": "SleepYandSand",
-        "msg": "詛咒5已解開"
+        "msg": "沉睡之沙",
+        "action": " "
     }, {
         "name": "ComePass",
-        "msg": "詛咒5已解開"
+        "msg": "定位羅盤(謎題)",
+        "action": " "
     }, {
         "name": "BoneBoneBone",
-        "msg": "詛咒5已解開"
+        "msg": "木乃伊殘骸",
+        "action": " "
     }, {
         "name": "0x480x650x78",
-        "msg": "詛咒5已解開"
+        "msg": "海克斯技術",
+        "action": " "
     }, {
         "name": "FreshPootau",
-        "msg": "詛咒5已解開"
+        "msg": "葡萄",
+        "action": " "
     }, {
         "name": "YouCantDrive",
-        "msg": "詛咒5已解開"
+        "msg": "葡萄酒",
+        "action": " "
     }, {
         "name": "Max6a6y",
-        "msg": "詛咒5已解開"
+        "msg": "遠古權杖",
+        "action": " "
     }, {
         "name": "Ramses6a6y",
-        "msg": "詛咒5已解開"
+        "msg": "拉美西斯神杖",
+        "action": " "
     }]
 }

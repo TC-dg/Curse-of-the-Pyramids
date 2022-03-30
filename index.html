@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,30 +24,29 @@
         <div class="san" id="san">善值:</div>
         <div class="progress">
             <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" id="sanbar"
-                role="progressbar" style="width: 50%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">87%
+                role="progressbar" style="width: 100%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">???%
             </div>
         </div>
-        <div class="teamname" id="teamname"> 隊名:總召小尾婷 </div>
+        <div class="teamname" id="teamname_display"> 隊名:總召小尾婷 </div>
     </div>
-    <div class="react" id="teannameinput">隊名tt
+    <div class="react" id="teannameinput">進入金資塔
         <br><br>
-        <div style="font-size:28px;">
-            <input class="login" type="text" id="login" placeholder="請輸入隊名" style="width: 40vw;"><br><br>
-            <button onclick="firstlogin()" style=" font-size: 20px;">login</button>
+        <div>
+            <input class="login" type="text" id="teamID" placeholder="請輸入隊伍ID"><br><br>
+            <input class="login" type="text" id="teamNAME" placeholder="請輸入隊名"><br><br>
+            <button onclick="firstlogin();sanimation();">login</button>
         </div>
     </div>
-    <div class="react" id="pswdreact">輸入密碼
+    <div class="react" id="pswdreact">輸入密語
         <br><br>
-        <div style="font-size:28px;">
-            <input class="spellinput" type="text" id="spell" placeholder="請輸入咒語"><br><br>
-            <button onclick="castspell()" style=" font-size: 20px;">確定</button><br>
+        <div>
+            <input class="spellinput" type="text" id="spell" placeholder="請輸入密語"><br><br>
+            <button onclick="castspell()">確定</button><br>
         </div>
         <div class="camera" id="camera" onclick="cameraon();">
             <img src="static\image\camera.png"><br>
         </div>
-        <!--<ul class="camera_list">
-            <p class="c_title">目前鏡頭</p>
-        </ul>-->
+
         <video class="preview" id="preview"></video>
     </div>
     <div class="react" id="cursereact">查看災難<br><br>
@@ -63,7 +63,7 @@
     <div class="react" id="bkpkreact">背包
         <br>
         <iframe class="packframe" id="packframe" src="pack.html" style="border:none;overflow:hidden;">
-            你的瀏覽器不支援 iframe
+            你的瀏覽器不支援 iframe 請使用google chrome或其他瀏覽器 如有需要可聯繫身旁工人
         </iframe>
     </div>
     <div class=" react" id="settingreact">設定/任務清單<br><br>
@@ -109,13 +109,13 @@
         <p>彩蛋 money10</p>
     </div>
     <div class="bott" id="bott">
-        <div class="passwd" id="passwd" onclick="password();">
+        <div class="icon" id="passwd" onclick="password();">
             <img src="static\image\spell.png" width="30" height="30"><br> 通關密語 </div>
-        <div class="curse" id="curse" onclick="curse();">
+        <div class="icon" id="curse" onclick="curse();">
             <img src="static\image\curse.png" width="30" height="30"><br> 災難 </div>
-        <div class="bpack" id="bpack" onclick="backpack();">
+        <div class="icon" id="bpack" onclick="backpack();">
             <img src="static\image\backpack.png" width="30" height="30"><br> 背包 </div>
-        <div class="setting" id="setting" onclick="settings();">
+        <div class="icon" id="setting" onclick="settings();">
             <img src="static\image\setting.png" width="30" height="30"><br> 其它 </div>
     </div>
 </body>
