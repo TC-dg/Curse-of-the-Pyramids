@@ -385,19 +385,3 @@ function set3() {
     document.getElementById("blackk").style.zIndex = 3;
     showconv(document.getElementById("creditconv"));
 }
-
-function sanimation() {
-    let elem = document.getElementById("sanbar");
-    let stepValue = 0;
-    let id = setInterval(frame, 100);
-
-    function frame() {
-        if (stepValue >= 105) {
-            stepValue = 0;
-        } else {
-            elem.style.width = (stepValue + 1) + "%";
-            elem.innerHTML = "???%";
-            stepValue = (stepValue + 1);
-        }
-    }
-}

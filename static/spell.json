@@ -10,6 +10,10 @@
         "msg": "panda2 has changed",
         "action": "itemnum = 2;itemnumbertitle = 'item' + itemnum + 'title';itemnumberjpg = 'item' + itemnum + 'jpg';itemandnumber = 'item' + itemnum;var iframe = document.getElementById('packframe');var elmnt = iframe.contentWindow.document.getElementById(itemandnumber);var title = iframe.contentWindow.document.getElementById(itemnumbertitle);var jpg = iframe.contentWindow.document.getElementById(itemnumberjpg);jpg.src = 'static/image/panda2.jpg';title.innerText = '熊貓變了';"
     }, {
+        "name": "san+10",
+        "msg": "san+10",
+        "action": "let elem = document.getElementById('sanbar'); let w = elem.style.width; let ww = w.match(/(\\d+)/); elem.style.width = (parseInt(ww[0]) + 10).toString() + '%';"
+    }, {
         "name": "c1",
         "msg": "詛咒1已解開",
         "action": "cursestat.curse1 = '1';cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();"
