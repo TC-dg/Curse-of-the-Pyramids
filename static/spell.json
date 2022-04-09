@@ -12,7 +12,7 @@
     }, {
         "name": "san+10",
         "msg": "san+10",
-        "action": "let elem = document.getElementById('sanbar'); let w = elem.style.width; let ww = w.match(/(\\d+)/); elem.style.width = (parseInt(ww[0]) + 10).toString() + '%';"
+        "action": "localStorage.setItem('san', parseInt(localStorage.getItem('san')) + 10);let elem = document.getElementById('sanbar');elem.style.width = (parseInt(localStorage.getItem('san'))).toString() + '%';"
     }, {
         "name": "c1",
         "msg": "詛咒1已解開",
@@ -32,7 +32,7 @@
     }, {
         "name": "c5",
         "msg": "詛咒5已解開",
-        "condition": "document.getElementById('eye').src == 'static/image/eye11110.png'",
+        "condition": "tmpnow == '11110'",
         "action": "cursestat.curse5 = '1';cursestat.now = (cursestat.curse1).toString() + (cursestat.curse2).toString() + (cursestat.curse3).toString() + (cursestat.curse4).toString() + (cursestat.curse5).toString();"
     }, {
         "name": "Compass",
@@ -77,6 +77,10 @@
     }, {
         "name": "Max6a6y",
         "msg": "遠古權杖",
+        "action": " "
+    }, {
+        "name": "finaltt",
+        "msg": "finalitem",
         "action": " "
     }, {
         "name": "Ramses6a6y",

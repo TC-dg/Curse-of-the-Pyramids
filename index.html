@@ -24,7 +24,7 @@
         <div class="san" id="san">善值:</div>
         <div class="progress">
             <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" id="sanbar"
-                role="progressbar" style="width: 10%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">?%
+                role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">??%
             </div>
         </div>
         <div class="teamname" id="teamname_display"> 隊名:總召小尾婷 </div>
@@ -76,7 +76,15 @@
         你確定要使用
         <span class="msg" id="itemn"> 道具名稱 </span>
         嗎 <br>
-        <button onclick="yes()">是</button><br>
+        <button onclick="yes()"> 是 </button>
+    </div>
+    <div class="conv" id="finalitemconv">
+        <div class="close" onclick="hideconv();" id="x">x</div>
+        你確定要使用
+        <span class="msg" id="itemn"> 最終道具 </span>
+        嗎 <br>
+        <button onclick="beking()" id="kingbtn"> 成為法老王 </button>
+        <button onclick="goback()" id="backbtn"> ???? </button>
     </div>
     <div class="conv" id="spellconv">
         <div class="close" onclick="hideconv();" id="x">x</div>

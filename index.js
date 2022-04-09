@@ -61,7 +61,10 @@ function firstlogin() {
         $("#teamname_display").html("隊名:" + localStorage.getItem('teamname'));
         localStorage.setItem('LScursestatus', JSON.stringify(cursestat));
         cu = JSON.parse(localStorage.getItem('LScursestatus'));
+        localStorage.setItem("san", 0);
+        document.getElementById('sanbar').style.width = localStorage.getItem('san').toString() + '%'
         tmpnow = "00000";
+
     } else {
         /*alert("請輸入正確的隊伍ID及隊名");
         return 0;*/
@@ -147,6 +150,7 @@ function hideconv() {
     questconv.style.display = "none";
     creditconv.style.display = "none";
     curseconv.style.display = "none";
+    finalitemconv.style.display = "none";
     document.getElementById("blackk").style.zIndex = 1;
     document.getElementById("spellconv").style.backgroundColor = "#700000";
     document.getElementById("spellconv").style.color = "#FFFFFF";
@@ -210,18 +214,17 @@ function cur5() {
 
 function doit(spell) {
     if (spell.name == "c5") {
-        if (eval(spell.condition)) {
-            eval(spell.action);
-        } else {
+        if (!(eval(spell.condition))) {
             $("#msg").html("條件不足");
+            return 0;
         }
+        document.getElementById('sanbar').innerText = document.getElementById('sanbar').style.width;
     }
-
     eval(spell.action);
     localStorage.setItem('LScursestatus', JSON.stringify(cursestat));
     cu = JSON.parse(localStorage.getItem('LScursestatus'));
-    console.log(cu);
     tmpnow = cu.now;
+    console.log(cu);
 }
 
 function sleep(ms) {
@@ -367,6 +370,23 @@ function yes() {
     }
 }
 
+function finalitem() {
+    if (parseInt(localStorage.getItem('san')) >= 90) {
+        window.parent.document.getElementById("backbtn").innerHTML = '回到現實';
+    }
+    window.parent.document.getElementById("blackk").style.opacity = 1;
+    window.parent.document.getElementById("blackk").style.zIndex = 3;
+    showconv(window.parent.document.getElementById("finalitemconv"));
+}
+
+
+function beking() {}
+
+function goback() {
+    if (parseInt(localStorage.getItem('san')) < 90) {
+        return 0;
+    }
+}
 
 function set1() {
     $(".blackk").css('opacity', '1');
