@@ -1,2 +1,2 @@
 # curseofpharaoh
-2022超資tt
+2022超資
